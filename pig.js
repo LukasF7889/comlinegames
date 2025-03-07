@@ -9,7 +9,7 @@ if (input.length < 1) {
 
 const piggy = (input, output) => {
   input.forEach((e) => {
-    //Split Words into arrays
+    //Split Words into arrays with single letters
     const word = e.split("");
 
     //Check if first is vowel
