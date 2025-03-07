@@ -9,28 +9,24 @@ if (input.length < 1) {
 
 const piggy = (input, output) => {
   input.forEach((e) => {
-    //Split Words into arrays with single letters
-    const word = e.split("");
+    const word = e.split(""); //Split Words into arrays with single letters
 
     //Check if first is vowel
     if (vowels.includes(word[0])) {
       // if first letter is a vowel
-      word.push("w", "a", "y");
+      word.push("way");
     } else if (!vowels.includes(word[0]) && vowels.includes(word[1])) {
       //first letter is consonant, second is vowel
-      const firstLetter = word.shift();
-      word.push(firstLetter, "a", "y");
+      const firstLetter = word.shift(); //return first letter
+      word.push(firstLetter, "ay"); // push first letter to the end, add ay
     } else if (!vowels.includes(word[0]) && !vowels.includes(word[1])) {
       //first two are consonants
-      const firstLetters = word.slice(0, 2);
-      word.splice(0, 2);
-      console.log(word);
-      console.log(firstLetters);
-      word.push(firstLetters[0], firstLetters[1], "a", "y");
-      console.log(word);
+      const firstLetters = word.slice(0, 2); //get first 2 letters
+      word.splice(0, 2); //remove first 2 letters
+      word.push(firstLetters[0], firstLetters[1], "ay"); //push first 2 letters to the end, add ay
     }
 
-    output += " " + word.join("");
+    output += " " + word.join(""); // add word to output
   });
 
   console.log(output);

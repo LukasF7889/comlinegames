@@ -51,6 +51,7 @@ words.forEach((e) => {
   let translatedWord = "";
   currWord.forEach((i) => {
     const currPos = alphabet.indexOf(i); // get current position inside alphabet
+    // const targetPosition = currPos + shift;
     const targetPosition = (currPos + shift + 26) % 26; //shift current number to target value. modulo makes sure that shift will stay inside the array
     const newLetter = alphabet.slice(targetPosition, targetPosition + 1);
     translatedWord += newLetter;
